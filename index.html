@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SportNexio - Coming Soon</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container" id="tilt-wrapper">
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="logo.png" alt="SportNexio Logo">
+            <h1>SportNexio</h1>
+        </div>
+
+        <!-- Spline 3D View -->
+        <div class="spline-container">
+            <iframe src="https://my.spline.design/genkubgreetingrobot-Fiwzpx3KLpZyrbqmXOBPliz8/"
+                frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+
+        <!-- Launch Info -->
+        <div class="content">
+            <h1 class="typing-text">SportNexio launching soon...</h1>
+            <p>We’re building the next big thing in sports and fitness tech. Join our early supporters list!</p>
+            <form id="notifyForm">
+                <input type="email" placeholder="Enter your email" required />
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team">
+            <h2>👥 Meet the Team</h2>
+            <div class="team-members">
+                <div class="member">
+                    <img src="shubh.jpeg" alt="Shubh">
+                    <p><strong>Shubh Mehta</strong><br />Founder & Lead Dev</p>
+                </div>
+                <div class="member">
+                    <img src="https://via.placeholder.com/100" alt="Dev 1">
+                    <p><strong>Krish babaria</strong><br />Planning</p>
+                </div>
+                <div class="member">
+                    <img src="https://via.placeholder.com/100" alt="Dev 2">
+                    <p><strong>Shailesh khushwa </strong><br />marketing</p>
+                </div>
+                <div class="member">
+                    <img src="https://via.placeholder.com/100" alt="Dev 3">
+                    <p><strong>Arpita jha</strong><br /> Testing    </p>
+                </div>
+                <div class="member">
+                    <img src="https://via.placeholder.com/100" alt="Dev 4">
+                    <p><strong>Unatti Machhi</strong><br />Testing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>📩 Reach us: <a href="mailto:sportnexio@yourdomain.com">sportnexio@yourdomain.com</a></p>
+            <p>&copy; 2025 SportNexio. All rights reserved.</p>
+        </footer>
+    </section>
+
+    <!-- JS for global tilt effect -->
+    <script>
+        const wrapper = document.getElementById('tilt-wrapper');
+        document.addEventListener('mousemove', (e) => {
+            const { innerWidth: width, innerHeight: height } = window;
+            const rotateX = ((e.clientY / height) - 0.5) * 10; // up/down tilt
+            const rotateY = ((e.clientX / width) - 0.5) * -10; // left/right tilt
+            wrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            wrapper.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        });
+
+        document.getElementById("notifyForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Thanks! You’ll be notified before we launch 🚀");
+        });
+    </script>
+</body>
+</html>
